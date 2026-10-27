@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+
+    {% if medicos %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>apellido</th>
+                    <th>Cedula</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for medicos in medicos %}
+            <tr>
+                <td>{{medicos[0]}}</td>
+                <td>{{medicos[1]}}</td>
+                <td>{{medicos[2]}}</td>
+                <td>{{medicos[3]}}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+    <p>no se encontraron registros o hubo un error de conexion.</p>
+    {% endif %}
+</body>
+</html>
